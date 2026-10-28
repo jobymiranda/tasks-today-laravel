@@ -36,7 +36,7 @@ Open `http://127.0.0.1:8000`.
 - `HomeController` filters tasks with `whereDate('task_date', today())`.
 - `TaskController` retrieves every task ordered by `task_date`.
 - `ProfileController` retrieves the single user record.
-- The interface uses the CasaForma-inspired responsive dashboard style.
+- The interface uses a personalized, colourful rainbow task-management style.
 
 ## Reset and reseed the local database
 

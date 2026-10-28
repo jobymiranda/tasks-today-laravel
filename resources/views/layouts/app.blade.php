@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#111111">
-    <title>@yield('title', 'Tasks for Today')</title><link rel="stylesheet" href="{{ asset('css/pos.css') }}">
+    <title>@yield('title', "Joby's Tasks")</title><link rel="stylesheet" href="{{ asset('css/pos.css') }}"><link rel="stylesheet" href="{{ asset('css/rainbow.css') }}">
     <style>
         .task-list{display:grid;gap:12px}.task-item{display:grid;grid-template-columns:12px 1fr auto;align-items:center;gap:14px;padding:16px 18px;border:1.5px solid var(--ink);border-radius:16px;background:#fff}.task-item>i{width:12px;height:12px;border-radius:50%;background:var(--yellow)}.task-item.done>i{background:var(--green)}.task-item.progress>i{background:var(--blue)}.task-item strong{display:block}.task-item small{color:var(--muted)}.task-status{padding:5px 10px;border-radius:999px;background:var(--yellow);font-size:.67rem;font-weight:900;text-transform:uppercase}.task-status.completed{color:#12623e;background:#bce9cb}.task-status.in-progress{color:#fff;background:var(--blue)}.profile-card{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center}.profile-art{display:grid;width:150px;height:150px;place-items:center;border:8px solid #fff;border-radius:50%;background:var(--yellow);box-shadow:8px 8px 0 var(--red);font-family:Georgia,serif;font-size:4rem}.profile-card h2{margin:0;font-family:Georgia,serif;font-size:2.5rem}.profile-meta{display:grid;gap:10px;margin-top:18px;color:var(--muted)}.profile-meta strong{color:var(--ink)}.about-copy{max-width:800px}@media(max-width:680px){.profile-card{grid-template-columns:1fr}.profile-art{margin:auto}}
     </style>
 </head>
 <body>
 <div class="app-shell"><div class="sidebar-scrim" data-sidebar-close></div><aside class="sidebar" id="appSidebar">
-    <a class="brand" href="{{ route('home') }}"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>TASKFORMA</strong><small>Tasks for today</small></span></a>
+    <a class="brand" href="{{ route('home') }}"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>JOBY'S TASKS</strong><small>My colourful daily board</small></span></a>
     <nav class="sidebar-nav" aria-label="Primary navigation"><p class="nav-label">Workspace</p><a class="{{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}"><span class="nav-icon">◆</span>Welcome</a><a class="{{ request()->routeIs('tasks') ? 'active' : '' }}" href="{{ route('tasks') }}"><span class="nav-icon">■</span>Task list</a><p class="nav-label">Reference</p><a class="{{ request()->routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}"><span class="nav-icon">●</span>Profile</a><a class="{{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}"><span class="nav-icon">?</span>About</a></nav>
-    <div class="sidebar-note"><span>IT0049 · TSA3</span><strong>Make today count.</strong><small>Laravel task management</small></div>
+    <div class="sidebar-note"><span>IT0049 · TSA3</span><strong>One task at a time.</strong><small>Made for Joby's daily flow</small></div>
 </aside><div class="main-shell"><header class="topbar"><button class="menu-button" type="button" data-sidebar-open aria-label="Open menu"><span></span><span></span></button><div><p>{{ now()->format('l, F j') }}</p><strong>@yield('eyebrow', 'Tasks for Today')</strong></div><a class="topbar-action" href="{{ route('tasks') }}"><span>＋</span> View all tasks</a></header><main class="content">@yield('content')</main><footer class="site-footer"><span>IT0049 · Web System Technologies</span><span>Tasks for Today Management System</span></footer></div></div>
 <script src="{{ asset('js/pos.js') }}" defer></script>
 </body></html>
